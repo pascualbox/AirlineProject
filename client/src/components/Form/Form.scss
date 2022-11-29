@@ -1,0 +1,63 @@
+.containerForm{
+    padding: 2rem;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+}
+.columns{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+.colLeft{
+    justify-content: left;
+    text-align: left;
+}
+.colRight{
+    justify-content: left;
+    text-align: left;
+}
+.originTitle{
+    font-size: 4vh;
+    justify-content: left;
+    text-align: left;
+    font-weight: bold;
+}
+.divSelect{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: -10rem;
+}
+.select{
+    margin: 2rem 0 4rem 0;
+    justify-content: center;
+    text-align: center;
+    width: 14rem;
+    height: 2rem;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #fffeee;
+}
+.select:hover{
+    background-color: #f5f3e4;
+}
+.oneTwo{
+}
+.formType{
+    margin: 2rem 0 2rem 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-right: 10rem;
+    font-size: 25px;
+    font-weight: 500;
+}
+.inputFirst{
+    margin-left: 3rem;
+}
+.date{
+
+}
