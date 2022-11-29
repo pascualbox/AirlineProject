@@ -1,13 +1,13 @@
-package com.quokka.AirlineProject;
+package com.quokka.QuokkaAirline;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AirlineProjectApplication {
+public class QuokkaAirlineApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AirlineProjectApplication.class, args);
+		SpringApplication.run(QuokkaAirlineApplication.class, args);
 	}
 
 }
