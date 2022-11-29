@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Form.scss";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 function Form() {
   const or1 = "Madrid";
@@ -55,10 +57,21 @@ function Form() {
             </div>
           </div>
           <div className="date">
-            <div></div>
-            <div>8</div>
+            <div className="calendar">
+              <div className="dateTitle">Departure:</div>
+              <Calendar />
+            </div>
+            <div className="calendar">
+              <div className="dateTitle">Return:</div>
+              <Calendar />
+            </div>
           </div>
         </div>
+      </div>
+      <div>
+        <button className="btn" onClick={""}>
+          Search
+        </button>
       </div>
     </div>
   );
