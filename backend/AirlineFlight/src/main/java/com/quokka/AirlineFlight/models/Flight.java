@@ -6,6 +6,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.quokka.AirlineFlight.exceptions.EmptyException;
+import com.quokka.AirlineFlight.exceptions.WrongValueException;
+
 @Document("flight")
 public class Flight {
     @Id
@@ -31,7 +34,7 @@ public class Flight {
 
     public Flight(String id, String name, String airline, Date departure, int transiteMinutes, int layovers,
             int luggagesPrice,
-            int price) {
+            int price) throws EmptyException, Exception {
         setId(id);
         setName(name);
         setAirline(airline);
@@ -42,11 +45,38 @@ public class Flight {
         setPrice(price);
     }
 
+    public boolean validate() throws EmptyException, WrongValueException {
+        if (name.trim().equals("") || name == null) {
+            throw new EmptyException("Name can't be empty");
+        }
+        if (airline.trim().equals("") || airline == null) {
+            throw new EmptyException("Airline can't be empty");
+        }
+        if (transiteMinutes <= 0) {
+            throw new WrongValueException("Transite minutes must be greater than 0");
+        }
+        if (layovers <= 0) {
+            throw new WrongValueException("Layovers must be greater than 0");
+        }
+        if (luggagesPrice <= 0) {
+            throw new WrongValueException("Luggages price must be greater than 0");
+        }
+        if (price <= 0) {
+            throw new WrongValueException("Price must be greater than 0");
+        }
+        if (price < luggagesPrice) {
+            throw new WrongValueException("Price can't be lower than luggages price");
+        }
+
+        return true;
+    }
+
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(String id) throws EmptyException {
+
         this.id = id;
     }
 
@@ -54,7 +84,8 @@ public class Flight {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws EmptyException {
+
         this.name = name;
     }
 
@@ -62,7 +93,8 @@ public class Flight {
         return airline;
     }
 
-    public void setAirline(String airline) {
+    public void setAirline(String airline) throws EmptyException {
+
         this.airline = airline;
     }
 
