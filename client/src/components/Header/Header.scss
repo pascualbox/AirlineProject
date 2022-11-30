@@ -3,14 +3,22 @@
     height: 10vh;
     background-color: rgb(193, 193, 243);
     display: flex;
-    justify-content: center;
-    text-align: center;
 }
 .containerH{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     margin: 1vh;
 }
 .options{
     margin: 0 5vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.optionsLogo{
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    filter: invert(0.5);
+    margin-left: 2rem;
 }

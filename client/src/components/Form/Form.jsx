@@ -1,77 +1,118 @@
 import React, { useState } from "react";
+import planeLogo from "../../assets/Background/plane.png";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 import "./Form.scss";
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import Calendar from "./Calendar";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 function Form() {
-  const or1 = "Madrid";
-  const or2 = "Seville";
-  const or3 = "Barcelona";
-  const or4 = "Lugo";
-  const or5 = "Andorra";
+  const [origin, setOrigin] = React.useState("");
+  const [destination, setDestination] = React.useState("");
+  const [type, setType] = React.useState("");
+
+  const handleOrigin = (event) => {
+    setOrigin(event.target.value);
+  };
+  const handleDestination = (event) => {
+    setDestination(event.target.value);
+  };
+
+  const handleType = (event) => {
+    setType(event.target.value);
+  };
 
   return (
     <div className="containerForm">
       <div className="columns">
         <div className="colLeft">
           <div className="origin">
-            <div className="originTitle">Origin:</div>
+            <div className="title">Origin:</div>
             <div className="divSelect">
-              <select name="origin" title="origin" className="select">
-                <option value="empty"></option>
-                <option value={or1}>{or1}</option>
-                <option value={or2}>{or2}</option>
-                <option value={or3}>{or3}</option>
-                <option value={or4}>{or4}</option>
-                <option value={or5}>{or5}</option>
-              </select>
+              <Box sx={{ minWidth: 200 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Origin</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={origin}
+                    label="Origin"
+                    onChange={handleOrigin}
+                  >
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
             </div>
           </div>
           <div className="destination">
-            <div className="originTitle">Destination:</div>
+            <div className="title">Destination:</div>
             <div className="divSelect">
-              <select name="origin" title="origin" className="select">
-                <option value="empty"></option>
-                <option value={or1}>{or1}</option>
-                <option value={or2}>{or2}</option>
-                <option value={or3}>{or3}</option>
-                <option value={or4}>{or4}</option>
-                <option value={or5}>{or5}</option>
-              </select>
+              <Box sx={{ minWidth: 200 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">
+                    Destination
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={destination}
+                    label="Destination"
+                    onChange={handleDestination}
+                  >
+                    <MenuItem value={10}>Madrid</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
             </div>
           </div>
+          <div className="oneTwo">
+            <div className="title">Type:</div>
+            <div className="formType">
+              <Box sx={{ minWidth: 200 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Type</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={type}
+                    label="OWRT"
+                    onChange={handleType}
+                  >
+                    <MenuItem value={10}>One Way</MenuItem>
+                    <MenuItem value={20}>Round Trip</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className="colRight">
+            <div className="title">Departure:</div>
+            <Calendar />
+          </div>
+          <img src={planeLogo} alt="Plane Logo" className="plane" />
         </div>
         <div className="colRight">
-          <div className="oneTwo">
-            <div className="originTitle">Type:</div>
-            <div className="formType">
-              <input class="" type="radio" name="type" value="oneWay" />
-              <label>One Way</label>
-              <input
-                class="inputFirst"
-                type="radio"
-                name="type"
-                value="roundTrip"
-              />
-              <label>Round Trip</label>
-            </div>
-          </div>
-          <div className="date">
-            <div className="calendar">
-              <div className="dateTitle">Departure:</div>
-              <Calendar />
-            </div>
-            <div className="calendar">
-              <div className="dateTitle">Return:</div>
-              <Calendar />
-            </div>
-          </div>
+          <div className="title">Return:</div>
+          <Calendar />
         </div>
       </div>
-      <div>
-        <button className="btn" onClick={""}>
+      <div className="btnDiv">
+        <Button variant="contained" className="btn">
           Search
-        </button>
+        </Button>
       </div>
     </div>
   );
