@@ -4,6 +4,9 @@
     background-color: rgb(193, 193, 243);
     display: flex;
 }
+h2{
+    margin-left: 5vw;
+}
 .containerH{
     display: flex;
     justify-content: left;
@@ -12,8 +15,8 @@
 .options{
     margin: 0 5vw;
     display: flex;
-    justify-content: center;
-    text-align: center;
+    justify-content: left;
+    text-align: left;
 }
 .optionsLogo{
     display: flex;
@@ -21,4 +24,5 @@
     text-align: left;
     filter: invert(0.5);
     margin-left: 2rem;
+    margin-right: 10rem;
 }

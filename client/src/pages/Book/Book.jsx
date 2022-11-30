@@ -2,8 +2,10 @@ import React from "react";
 import "./Book.scss";
 import Button from "@mui/material/Button";
 import logo from "../../assets/Logo/qoukkaStamp.png";
+import { Link } from "@mui/material";
 
 function Book() {
+  const link = "http://localhost:3000/";
   return (
     <div className="containerBook">
       <div className="message">
@@ -13,7 +15,9 @@ function Book() {
         <p>Have a nice day.</p>
         <div className="return">
           <div className="btnHome">
-            <Button variant="contained">Home</Button>
+            <Link href="/">
+              <Button variant="contained">Home</Button>
+            </Link>
           </div>
 
           <img src={logo} alt="Quokka Airlines" className="image" />

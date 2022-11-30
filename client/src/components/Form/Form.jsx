@@ -12,6 +12,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
 function Form() {
+  let res = "";
   const [origin, setOrigin] = React.useState("");
   const [destination, setDestination] = React.useState("");
   const [type, setType] = React.useState("");
@@ -26,6 +27,12 @@ function Form() {
   const handleType = (event) => {
     setType(event.target.value);
   };
+
+  if (type != "round") {
+    res = "colRight hidden";
+  } else {
+    res = "colRight";
+  }
 
   return (
     <div className="containerForm">
@@ -44,9 +51,11 @@ function Form() {
                     label="Origin"
                     onChange={handleOrigin}
                   >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value="Madrid">Madrid</MenuItem>
+                    <MenuItem value="Sevilla">Sevilla</MenuItem>
+                    <MenuItem value="Barcelona">Barcelona</MenuItem>
+                    <MenuItem value="Lugo">Lugo</MenuItem>
+                    <MenuItem value="Canarias">Gran Canarias</MenuItem>
                   </Select>
                 </FormControl>
               </Box>
@@ -68,6 +77,7 @@ function Form() {
                     onChange={handleDestination}
                   >
                     <MenuItem value={10}>Madrid</MenuItem>
+                    <MenuItem value={10}>Madrid</MenuItem>
                     <MenuItem value={20}>Twenty</MenuItem>
                     <MenuItem value={30}>Thirty</MenuItem>
                   </Select>
@@ -88,8 +98,8 @@ function Form() {
                     label="OWRT"
                     onChange={handleType}
                   >
-                    <MenuItem value={10}>One Way</MenuItem>
-                    <MenuItem value={20}>Round Trip</MenuItem>
+                    <MenuItem value="oneWay">One Way</MenuItem>
+                    <MenuItem value="round">Round Trip</MenuItem>
                   </Select>
                 </FormControl>
               </Box>
@@ -104,7 +114,7 @@ function Form() {
           </div>
           <img src={planeLogo} alt="Plane Logo" className="plane" />
         </div>
-        <div className="colRight">
+        <div className={res}>
           <div className="title">Return:</div>
           <Calendar />
         </div>
