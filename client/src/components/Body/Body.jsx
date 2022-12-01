@@ -8,6 +8,7 @@ import NotFound from "../../pages/NotFound/NotFound";
 import User from "../../pages/User/User";
 import SignUp from "../../pages/SignUp/SignUp";
 import LogIn from "../../pages/LogIn/LogIn";
+import Flight from "../../pages/Flight/Flight";
 
 function Body(props) {
   const body = "";
@@ -27,10 +28,10 @@ function Body(props) {
         path: "/user",
         element: <User setUseHeader={props.setUseHeader} />,
       },
-      // {
-      //   path: "/trips",
-      //   element: <MyTrips />,
-      // },
+      {
+        path: "/flights",
+        element: <Flight setUseHeader={props.setUseHeader} />,
+      },
       // {
       //   path: "/tickets",
       //   element: <BuyTickets />,
@@ -51,9 +52,6 @@ function Body(props) {
           <BrowserRouter>
             <App />
           </BrowserRouter>
-
-          {/* <Book></Book> */}
-          {/* <Home /> */}
         </div>
       </div>
     );
@@ -64,26 +62,10 @@ function Body(props) {
           <BrowserRouter>
             <App />
           </BrowserRouter>
-
-          {/* <Book></Book> */}
-          {/* <Home /> */}
         </div>
       </div>
     );
   }
-
-  return (
-    <div className={body}>
-      <div className="container">
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-
-        {/* <Book></Book> */}
-        {/* <Home /> */}
-      </div>
-    </div>
-  );
 }
 
 export default Body;

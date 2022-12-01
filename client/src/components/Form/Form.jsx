@@ -13,6 +13,7 @@ import Button from "@mui/material/Button";
 
 function Form() {
   let res = "";
+  const dest = ["USA", "Peru", "Canada", "Italy", "Germany", "France"];
   const [origin, setOrigin] = React.useState("");
   const [destination, setDestination] = React.useState("");
   const [type, setType] = React.useState("");
@@ -30,8 +31,10 @@ function Form() {
 
   if (type != "round") {
     res = "colRight hidden";
+    const dest = ["Select an Origin"];
   } else {
     res = "colRight";
+    const dest = ["USA", "Peru", "Canada", "Italy", "Germany", "France"];
   }
 
   return (
@@ -76,10 +79,9 @@ function Form() {
                     label="Destination"
                     onChange={handleDestination}
                   >
-                    <MenuItem value={10}>Madrid</MenuItem>
-                    <MenuItem value={10}>Madrid</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    {dest.map((element) => (
+                      <MenuItem value={element}>{element}</MenuItem>
+                    ))}
                   </Select>
                 </FormControl>
               </Box>

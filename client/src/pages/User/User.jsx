@@ -8,19 +8,19 @@ function User(props) {
     <div className="precontainer">
       <div className="containerUser">
         <div className="inContainer">
-          <div className="label">Name: </div>
+          <div className="labelUser">Name: </div>
           <div className="inbox">{name}</div>
         </div>
         <div className="inContainer">
-          <label className="label">Nationality: </label>
+          <div className="labelUser">Nationality: </div>
           <div className="inbox">{name}</div>
         </div>
         <div className="inContainer">
-          <label className="label">NIF/Passport: </label>
+          <div className="labelUser">NIF/Passport: </div>
           <div className="inbox">{name}</div>
         </div>
         <div className="inContainer">
-          <label className="label">Age: </label>
+          <div className="labelUser">Age: </div>
           <div className="inbox">{name}</div>
         </div>
       </div>

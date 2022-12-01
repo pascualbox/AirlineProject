@@ -14,7 +14,7 @@ function Book() {
         <p>Have a nice day.</p>
         <div className="return">
           <div className="btnHome">
-            <Link href="/">
+            <Link href="/home">
               <Button variant="contained">Home</Button>
             </Link>
           </div>
