@@ -10,33 +10,30 @@ import org.springframework.stereotype.Component;
 
 import com.quokka.AirlineFlight.models.Flight;
 import com.quokka.AirlineFlight.repositories.CustomFlightRepository;
-import com.quokka.AirlineFlight.repositories.FlightsRepository;
 
 @Component
 public class FlightService {
     @Autowired
     CustomFlightRepository flightRepository;
-    FlightsRepository flightsRepository;
 
     public void save(Flight flight) {
-        flightsRepository.save(flight);
+        flightRepository.save(flight);
     }
 
     public List<Flight> findAll() {
-        return flightsRepository.findAll();
+        return flightRepository.findAll();
     }
 
     public void deleteById(String id) {
-        flightsRepository.deleteById(id);
+        flightRepository.deleteById(id);
     }
 
     public List<Flight> findFiltered(HashMap<String, String> data) {
         return flightRepository.findFiltered(data);
     }
 
-    public Optional<Flight> findById(String id) {
-        System.out.println(id);
-        return flightsRepository.findById(id);
+    public Flight findById(String id) {
+        return flightRepository.findById(id);
     }
 
     // public void deleteById(String id) {
