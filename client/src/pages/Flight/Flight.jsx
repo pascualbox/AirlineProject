@@ -5,9 +5,8 @@ import FlightCard from "../../components/FlightCard/FlightCard";
 function Flight(props) {
   return (
     <div>
-      <div className="titleFlight">Flights</div>
       <div className="tripContainer">
-        <div className="filter"></div>
+        <div className="titleFlight">Flights</div>
         <div className="flightCont">
           <FlightCard></FlightCard>
         </div>

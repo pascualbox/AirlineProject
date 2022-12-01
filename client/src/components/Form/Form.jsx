@@ -10,9 +10,11 @@ import "react-calendar/dist/Calendar.css";
 import Calendar from "./Calendar";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import Selecter from "../Selecter/Selecter";
 
 function Form() {
   let res = "";
+  const orgn = ["Madrid", "Sevilla", "Barcelona", "Lugo", "Canarias"];
   const dest = ["USA", "Peru", "Canada", "Italy", "Germany", "France"];
   const [origin, setOrigin] = React.useState("");
   const [destination, setDestination] = React.useState("");
@@ -31,10 +33,8 @@ function Form() {
 
   if (type != "round") {
     res = "colRight hidden";
-    const dest = ["Select an Origin"];
   } else {
     res = "colRight";
-    const dest = ["USA", "Peru", "Canada", "Italy", "Germany", "France"];
   }
 
   return (
@@ -67,24 +67,11 @@ function Form() {
           <div className="destination">
             <div className="title">Destination:</div>
             <div className="divSelect">
-              <Box sx={{ minWidth: 200 }}>
-                <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">
-                    Destination
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={destination}
-                    label="Destination"
-                    onChange={handleDestination}
-                  >
-                    {dest.map((element) => (
-                      <MenuItem value={element}>{element}</MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-              </Box>
+              <Selecter
+                array={dest}
+                origin={origin}
+                name={"Destin."}
+              ></Selecter>
             </div>
           </div>
           <div className="oneTwo">
@@ -108,7 +95,6 @@ function Form() {
             </div>
           </div>
         </div>
-
         <div>
           <div className="colRight">
             <div className="title">Departure:</div>
