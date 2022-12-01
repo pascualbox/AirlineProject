@@ -5,7 +5,6 @@ import logo from "../../assets/Logo/qoukkaStamp.png";
 import { Link } from "@mui/material";
 
 function Book() {
-  const link = "http://localhost:3000/";
   return (
     <div className="containerBook">
       <div className="message">

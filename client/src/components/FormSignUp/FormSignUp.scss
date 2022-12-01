@@ -1,0 +1,32 @@
+.mainForm {
+  align-items: center;
+  justify-content: center;
+}
+
+input.submitBtn {
+  background-color: blue;
+  color: white;
+}
+
+input {
+  text-indent: 5px;
+}
+.signLog{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.logIn{
+  display: flex;
+  color: blue;
+  font-weight: 400;
+}
+.logIn::after{
+  display: flex;
+  color: blue;
+  font-weight: 400;
+}
+.textLI{
+  color:black;
+  margin-right: 1rem;
+}

@@ -1,13 +1,14 @@
 import React from "react";
 import "./User.scss";
 
-function User() {
+function User(props) {
+  props.setUseHeader(true);
   const name = "Arturo del Hierro";
   return (
     <div className="precontainer">
       <div className="containerUser">
         <div className="inContainer">
-          <label className="label">Name: </label>
+          <div className="label">Name: </div>
           <div className="inbox">{name}</div>
         </div>
         <div className="inContainer">
