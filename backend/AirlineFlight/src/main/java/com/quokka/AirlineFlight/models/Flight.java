@@ -7,10 +7,13 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+<<<<<<< Updated upstream
+=======
 import com.quokka.AirlineFlight.exceptions.EmptyException;
 import com.quokka.AirlineFlight.exceptions.InvalidDataException;
 import com.quokka.AirlineFlight.exceptions.WrongValueException;
 
+>>>>>>> Stashed changes
 @Document("flight")
 public class Flight {
     @Id
@@ -41,7 +44,11 @@ public class Flight {
     public Flight(String id, String name, String airline, Date departure, Date returnDate, int transiteMinutes,
             int layovers,
             int luggagesPrice,
+<<<<<<< Updated upstream
+            int price) {
+=======
             int price, boolean hasReturn) throws EmptyException, Exception {
+>>>>>>> Stashed changes
         setId(id);
         setName(name);
         setAirline(airline);
@@ -53,6 +60,8 @@ public class Flight {
         setPrice(price);
     }
 
+<<<<<<< Updated upstream
+=======
     public boolean validate() throws EmptyException, WrongValueException, InvalidDataException {
         if (name.trim().equals("") || name == null) {
             throw new EmptyException("Name can't be empty");
@@ -90,6 +99,7 @@ public class Flight {
         return true;
     }
 
+>>>>>>> Stashed changes
     public String getId() {
         return id;
     }
@@ -172,7 +182,7 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "{id: " + getId() + ", name: " + getName() + ", airline: " + getAirline() + ", departure: "
+        return "{id: " + getId() + ",name: " + getName() + ", airline: " + getAirline() + ", departure: "
                 + getDeparture() + ", returnDate: "
                 + getReturnDate()
                 + ", transiteMinutes: "
